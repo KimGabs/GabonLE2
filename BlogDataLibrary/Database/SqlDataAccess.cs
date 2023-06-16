@@ -19,7 +19,7 @@ namespace BlogDataLibrary.Database
             _config = config;
         }
 
-        public List<T> LoadDate<T, U>(string sqlStatement, U parameters, string connectionStringName, bool isStoredProcedure)
+        public List<T> LoadData<T, U>(string sqlStatement, U parameters, string connectionStringName, bool isStoredProcedure)
         {
             CommandType commandType = CommandType.Text;
             string connectionString = _config.GetConnectionString(connectionStringName);

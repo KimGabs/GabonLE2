@@ -4,3 +4,7 @@ C:\Users\Gabs\source\repos\GabonLE2\GabonBlogDB\bin\Debug\GabonBlogDB.pdb
 C:\Users\Gabs\source\repos\GabonLE2\GabonBlogDB\obj\Debug\GabonBlogDB.sqlproj.AssemblyReference.cache
 C:\Users\Gabs\source\repos\GabonLE2\GabonBlogDB\obj\Debug\GabonBlogDB.dll
 C:\Users\Gabs\source\repos\GabonLE2\GabonBlogDB\obj\Debug\GabonBlogDB.pdb
+C:\Users\Gabs\source\repos\GabonLE2\GabonBlogDB\obj\Debug\Model.xml
+C:\Users\Gabs\source\repos\GabonLE2\GabonBlogDB\obj\Debug\refactor.xml
+C:\Users\Gabs\source\repos\GabonLE2\GabonBlogDB\obj\Debug\postdeploy.sql
+C:\Users\Gabs\source\repos\GabonLE2\GabonBlogDB\obj\Debug\predeploy.sql
