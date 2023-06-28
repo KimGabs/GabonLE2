@@ -16,8 +16,8 @@ namespace BlogTestUI
 
             //ListPosts(db);
 
-            AddPost(db);
-
+            //AddPost(db);
+            ShowPostDetails(db);
             //Register(db);
             Console.WriteLine("Press Enter to exit...");
             Console.ReadLine();
@@ -111,6 +111,22 @@ namespace BlogTestUI
                 Console.WriteLine($"{post.Body.Substring(0, 20)}...");
                 Console.WriteLine();
             }
+        }
+
+        private static void ShowPostDetails(SqlData db)
+        {
+            Console.Write("Enter a post ID: ");
+            int id = Int32.Parse(Console.ReadLine());
+
+            ListPostModel post = db.ShowPostDetails(id);
+            Console.WriteLine(post.Title);
+            Console.WriteLine($"by {post.FirstName} {post.LastName} [{post.UserName}]");
+
+            Console.WriteLine();
+
+            Console.WriteLine(post.Body);
+
+            Console.WriteLine(post.DateCreated.ToString("MMM d yyyy"));
         }
     }
 }

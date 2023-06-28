@@ -200,6 +200,91 @@
 			</Relationship>
 			<AttachedAnnotation Disambiguator="5" />
 		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[spPosts_Detail]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+begin
+	set nocount on;
+
+	SELECT [p].[id], [p].[Title], [p].[Body], [p].[DateCreated], [u].[UserName], [u].[FirstName], [u].[LastName]
+	FROM dbo.Posts p
+	INNER JOIN dbo.Users u
+	ON p.UserId = u.Id
+	WHERE p.Id = @id;
+
+end]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Posts]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Users]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Posts].[UserId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Users].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Posts].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Posts].[Title]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Posts].[Body]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Posts].[DateCreated]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Users].[Username]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Users].[FirstName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Users].[LastName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Posts].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[spPosts_Detail].[@id]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[spPosts_Detail].[@id]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="283" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[spPosts_Detail]&#xD;&#xA;&#x9;@id int&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
 		<Element Type="SqlProcedure" Name="[dbo].[spPosts_Insert]">
 			<Property Name="BodyScript">
 				<Value><![CDATA[

@@ -45,5 +45,10 @@ namespace BlogDataLibrary.Data
             return _db.LoadData<ListPostModel, dynamic>("dbo.spPosts_List", new { },
                 connectionStringName, true).ToList();
         }
+
+        public ListPostModel ShowPostDetails(int id)
+        {
+            return _db.LoadData<ListPostModel, dynamic>("dbo.spPosts_Detail", new { id }, connectionStringName, true).FirstOrDefault();
+        }
     }
 }

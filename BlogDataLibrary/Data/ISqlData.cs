@@ -8,5 +8,6 @@ namespace BlogDataLibrary.Data
         UserModel Authenticate(string username, string password);
         List<ListPostModel> ListPosts();
         void Register(string username, string firstName, string lastName, string password);
+        ListPostModel ShowPostDetails(int id);
     }
 }
